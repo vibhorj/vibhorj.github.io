@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<script>
+	function btnClick(){
+		dataLayer.push({
+
+			"event": "Add News Portal", // must include 'event' key
+
+			"eventInfo": {
+					
+					"eventAction": "addportal",
+					"eventPoints": 200,
+					"type": "contentModifier",
+					"timeStamp": new Date(),
+					"effect": "include portal 1234",
+
+					"category": {
+						"primaryCategory": "FAQ Pages",
+						"subCategory1": "dashboard"
+					}, // "category" closure
+
+					"component": [{
+						
+						"componentInfo": {
+							"componentID": "rog300v",
+							"componentName": "How to Use Rogaine",
+							"description": "Hair Treatment Video"
+						},
+						"category": {
+							"primaryCategory": "Haircare",
+							"subCategory1": "Videos",
+							"componentType": "Flash Movie"
+						},
+						"attributes": {
+							// extensibility to the Page object. custom needs...
+						}
+					},
+					{
+						"componentInfo": {},
+						"category": {},
+						"attributes": {},
+					},
+					{}, // ... component[n]
+					{
+						// ... component[n]
+					}], // "component" closure		
+
+					"attributes": {
+						// extensibility to the eventInfo object. custom needs...
+					} 
+			} // "eventInfo" closure
+		}); // dataLayer.push() ends
+	}
+
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MB4MW');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+
+	<a href="./index.html"> Back to Universal datalayer specs</a>
+	<br>
+	<h1>Welcome to GTM-P5MB4MW!</h1>
+type <I>dataLayer</I> in browser console
+
+<p>
+<button type = "button" onclick="btnClick()">click this button</button> and type type <I>dataLayer</I> in browser console to see what gets pushed to <I>window.datalayer</I>
+</p>
+
+<PRE><CODE>
+	dataLayer = window.dataLayer || [];
+	dataLayer.push({
+
+		"event": "Add News Portal", // must include 'event' key
+
+		"eventInfo": {
+					
+			"eventAction": "addportal",
+			"eventPoints": 200,
+			"type": "contentModifier",
+			"timeStamp": new Date(),
+			"effect": "include portal 1234",
+
+			"category": {
+				"primaryCategory": "FAQ Pages",
+				"subCategory1": "dashboard"
+			}, // "category" closure
+
+			"component": [{
+				
+				"componentInfo": {
+					"componentID": "rog300v",
+					"componentName": "How to Use Rogaine",
+					"description": "Hair Treatment Video"
+				},
+				
+				"category": {
+					"primaryCategory": "Haircare",
+					"subCategory1": "Videos",
+					"componentType": "Flash Movie"
+				},
+				
+				"attributes": {
+					// extensibility to the Page object. custom needs...
+				}
+			},
+			{
+				"componentInfo": {},
+				"category": {},
+				"attributes": {},
+			},
+			{}, // ... component[n]
+			{
+				// ... component[n]
+			}], // "component" closure		
+
+			"attributes": {
+				// extensibility to the eventInfo object. custom needs...
+			} 
+		} // "eventInfo" closure
+	}); // dataLayer.push() ends
+</CODE></PRE>
+
+
+</body>
+</html>

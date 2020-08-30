@@ -68,6 +68,51 @@
 			}, // "segment" closure
 
 		} // "user" closure
+
+		"transaction": {
+
+			"transactionID": undefined,
+
+			"total": {
+				"basePrice": 200.00,
+				"voucherCode": "Alpha",
+				"voucherDiscount": 0.50,
+				"currency": "EUR",
+				"taxRate": 0.20,
+				"shipping": 5,
+				"shippingMethod": "UPS",
+				"priceWithTax": 120,
+				"transactionTotal": 125
+			}, 
+		
+			"item": [{
+				"productInfo": {},
+				"category": {},
+				"quantity": 0,
+				"price": 0.00,
+				"attributes": {}
+			},
+			{}, // ... item[n]
+			{}, // ... item[n]
+			{
+				// ... item[n]	
+			}], // "item" closure
+
+			"profile": {
+				"shippingAddress": {
+					"line1": "673 My Street",
+					"line2": "Apt 1",
+					"city": "Austin",
+					"stateProvince": "TX",
+					"postalCode": "78610",
+					"country": "USA"
+				}
+			}, // "profile" closure		
+
+			"attributes": {
+				// extensibility to the transaction object. custom needs...
+			}
+		} // "transaction" closure
 	});
 </script>
 
@@ -80,10 +125,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 </head>
 <body>
+	<a href="./index.html"> Back to Universal datalayer specs</a>
+	<br>
 	<h1>Welcome to GTM-P5MB4MW!</h1>
 type <I>dataLayer</I> in browser console
 
-<p>1. actual pageload</p>
+<p>1. Transaction confirmation page</p>
 
 <PRE><CODE>
 	dataLayer = window.dataLayer || [];
@@ -91,47 +138,10 @@ type <I>dataLayer</I> in browser console
 		"pageInstanceID": "dev", // "dev", "staging", "prod"
 		"page": <a href="obj/pageObj.html">pageObj</a>,
 		"user": <a href="obj/userObj">userObj</a>
+		"transaction": <a href="obj/transactionObj">transactionObj</a>
 	});
 </CODE></PRE>
-<br><br>
-<p>2. virtual page :: new page renders in SPA context ---> push additional key <CODE>_clear: true</CODE> together with new page context
-
-
-<PRE><CODE>
-	dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		"_clear": true,
-		"page.pageInfo": <a href="obj/pageObj.html">pageObj.pageInfo</a> coresponding top new context
-		"page.category": <a href="obj/pageObj.html">pageObj.category</a> coresponding top new context
-		"page.attributes": <a href="obj/pageObj.html">pageObj.attributes</a> coresponding top new context
-	});
-</CODE></PRE>
-
-<script>
-	function vPV(){
-		window.dataLayer.push({
-			_clear: true,
-			
-			"page.pageInfo": {
-					// category corresponding to new context
-					
-				},
-
-			"page.category": {
-					// category corresponding to new context
-				},
-
-
-			"page.attributes": {
-					// attributes corresponding to new context
-					
-				},
-		});
-	} 
-</script>
-
-<button type = "button" onclick="vPV()">new screen (virtual page)</button>
-
+<hr>
 
 </body>
 </html>
