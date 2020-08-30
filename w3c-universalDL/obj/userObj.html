@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userObj</title>
+
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+
+	"user" : {
+
+		"profile": {
+			"profileInfo": {
+				"profileID": "humanbeing12345",
+				"userName": "me"
+			},
+		
+			"address": {
+				"line1": "673 My Street",
+				"line2": "Apt 1",
+				"city": "Austin",
+				"stateProvince": "TX",
+				"postalCode": "78610",
+				"country": "USA"			
+			},
+
+			"attributes": {
+				// extensibility to the profile object. custom needs...
+			}
+		}, // "profile" closure
+		
+		"segment": {
+			// segmentation information for the user, such as premium versus basic membership,
+		}, // "segment" closure
+
+	} // "user" closure
+}); 
+
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MB4MW');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+<PRE><CODE>
+digitalData.user = {
+
+		"profile": {
+			"profileInfo": {
+				"profileID": "humanbeing12345",
+				"userName": "me"
+			},
+		
+			"address": {
+				"line1": "673 My Street",
+				"line2": "Apt 1",
+				"city": "Austin",
+				"stateProvince": "TX",
+				"postalCode": "78610",
+				"country": "USA"			
+			},
+
+			"attributes": {
+				// extensibility to the profile object. custom needs...
+			}
+		}, // "profile" closure
+		
+		"segment": {
+			// segmentation information for the user, such as premium versus basic membership,
+		}, // "segment" closure
+
+	} // "user" closure
+	
+</CODE></PRE>
+
+
+</body>
+</html>

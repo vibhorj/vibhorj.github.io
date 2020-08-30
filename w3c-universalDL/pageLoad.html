@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<script>
+
+
+	dataLayer = window.dataLayer || [];
+	dataLayer.push({
+
+		"pageInstanceID": "dev", // "dev", "staging", "prod"
+
+		"page": {
+
+			"pageInfo": {
+				"pageID": "316",
+				"pageName": "Rogaine Hair Regrowth Treatment",
+				"destinationURL": "http://site.com/r.html", // document.location
+				"referringURL": "http://www.google.com/url?&q=&esrc=s", // document.referrer,
+				"sysEnv": "mobile",
+				"variant": "2",
+				"version": "1.14",
+				"breadCrumbs": ["home","Products","haircare"],
+				"author": "J Smith",
+				"issueDate": "2013-09-01",
+				"effectiveDate": "2013-09-20",
+				"expiryDate": "2014-09-20",
+				"language": "en-US",
+				"geoRegion": "US",
+				"industryCodes": "SIC codes",
+			}, // "pageInfo" closure
+
+			"category": {
+				"primaryCategory": "FAQ Pages",
+				"subCategory1": "ProductInfo",
+				"pageType": "FAQ"
+			}, // "category" closure
+
+			"attributes": {
+				// extensibility to the Page object. custom needs...
+			}
+		}, // "page" closure,
+
+		"user": {
+
+			"profile": {
+				"profileInfo": {
+					"profileID": "humanbeing12345",
+					"userName": "me"
+				},
+			
+				"address": {
+					"line1": "673 My Street",
+					"line2": "Apt 1",
+					"city": "Austin",
+					"stateProvince": "TX",
+					"postalCode": "78610",
+					"country": "USA"			
+				},
+
+				"attributes": {
+					// extensibility to the profile object. custom needs...
+				}
+			}, // "profile" closure
+			
+			"segment": {
+				// segmentation information for the user, such as premium versus basic membership,
+			}, // "segment" closure
+
+		} // "user" closure
+	});
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MB4MW');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+
+
+<p>1. actual pageload</p>
+
+<PRE><CODE>
+	dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		"pageInstanceID": "dev", // "dev", "staging", "prod"
+		"page": <a href="obj/pageObj.html">pageObj</a>,
+		"user": <a href="obj/userObj">userObj</a>
+	});
+</CODE></PRE>
+<br><br>
+<p>2. virtual page :: new page renders in SPA context ---> push additional key <CODE>_clear: true</CODE> together with new page context
+
+
+<PRE><CODE>
+	dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		"_clear": true,
+		"page.pageInfo": <a href="obj/pageObj.html">pageObj.pageInfo</a> coresponding top new context
+		"page.category": <a href="obj/pageObj.html">pageObj.category</a> coresponding top new context
+		"page.attributes": <a href="obj/pageObj.html">pageObj.attributes</a> coresponding top new context
+	});
+</CODE></PRE>
+
+<script>
+	function vPV(){
+		window.dataLayer.push({
+			_clear: true,
+			
+			"page.pageInfo": {
+					// category corresponding to new context
+					
+				},
+
+			"page.category": {
+					// category corresponding to new context
+				},
+
+
+			"page.attributes": {
+					// attributes corresponding to new context
+					
+				},
+		});
+	} 
+</script>
+
+<button type = "button" onclick="vPV()">new screen (virtual page)</button>
+
+
+</body>
+</html>

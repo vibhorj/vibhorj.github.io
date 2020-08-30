@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>productObj</title>
+
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+
+	"product": [{
+		"productInfo": {
+			"productID": "rog3000",
+			"productName": "Rogaine",
+			"description": "Hair Regrowth",
+			"productURL": "http://site.com/r.html",
+			"productImage": "http://site.com/rog300_large.png",
+			"productThumbnail": "http://site.com/rog300_thumb.png",
+			"manufacturer": "Pharma",
+			"size": "300ml"
+		}, // "product[n].productInfo" closure
+		"category": {
+			"primaryCategory": "Haircare",
+			"subCategory1": "Men's",
+			"productType": "Thinning Hair Treatments"
+		}, // "product[n].category" closure
+		"attributes": {
+			// extensibility to the product[n] object. custom needs...
+		}},
+	{
+		"productInfo": {}, 
+		"category": {},
+		"attributes": {}
+	},
+	{}, // ... product[n]
+	{}, // ... product[n]
+	{
+		// ... product[n]	
+	}] // "product" closure
+
+}); 
+
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MB4MW');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+<PRE><CODE>
+digitalData.product = [{
+		
+		"productInfo": {
+			"productID": "rog3000",
+			"productName": "Rogaine",
+			"description": "Hair Regrowth",
+			"productURL": "http://site.com/r.html",
+			"productImage": "http://site.com/rog300_large.png",
+			"productThumbnail": "http://site.com/rog300_thumb.png",
+			"manufacturer": "Pharma",
+			"size": "300ml"
+		}, // "product[n].productInfo" closure
+		
+		"category": {
+			"primaryCategory": "Haircare",
+			"subCategory1": "Men's",
+			"productType": "Thinning Hair Treatments"
+		}, // "product[n].category" closure
+		
+		"attributes": {
+			// extensibility to the product[n] object. custom needs...
+		}},
+	
+	{
+		"productInfo": {}, 
+		"category": {},
+		"attributes": {}
+	},
+	{}, // ... product[n]
+	{}, // ... product[n]
+	{
+		// ... product[n]	
+	}] // "product" closure
+	
+</CODE></PRE>
+
+
+</body>
+</html>

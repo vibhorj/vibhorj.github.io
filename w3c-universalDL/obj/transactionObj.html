@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transactionObj</title>
+
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+
+	"transaction": {
+
+		"transactionID": undefined,
+
+		"total": {
+			"basePrice": 200.00,
+			"voucherCode": "Alpha",
+			"voucherDiscount": 0.50,
+			"currency": "EUR",
+			"taxRate": 0.20,
+			"shipping": 5,
+			"shippingMethod": "UPS",
+			"priceWithTax": 120,
+			"transactionTotal": 125
+		}, 
+	
+		"item": [{
+			"productInfo": {},
+			"category": {},
+			"quantity": 0,
+			"price": 0.00,
+			"attributes": {}
+		},
+		{}, // ... item[n]
+		{}, // ... item[n]
+		{
+			// ... item[n]	
+		}], // "item" closure
+
+		"profile": {
+			"shippingAddress": {
+				"line1": "673 My Street",
+				"line2": "Apt 1",
+				"city": "Austin",
+				"stateProvince": "TX",
+				"postalCode": "78610",
+				"country": "USA"
+			}
+		}, // "profile" closure		
+
+		"attributes": {
+			// extensibility to the transaction object. custom needs...
+		}
+	} // "transaction" closure
+}); 
+
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MB4MW');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+<PRE><CODE>
+digitalData.transaction = {
+
+		"transactionID": undefined,
+
+		"total": {
+			"basePrice": 200.00,
+			"voucherCode": "Alpha",
+			"voucherDiscount": 0.50,
+			"currency": "EUR",
+			"taxRate": 0.20,
+			"shipping": 5,
+			"shippingMethod": "UPS",
+			"priceWithTax": 120,
+			"transactionTotal": 125
+		}, 
+	
+		"item": [{
+			"productInfo": {},
+			"category": {},
+			"quantity": 0,
+			"price": 0.00,
+			"attributes": {}
+		},
+		{}, // ... item[n]
+		{}, // ... item[n]
+		{
+			// ... item[n]	
+		}], // "item" closure
+
+		"profile": {
+			"shippingAddress": {
+				"line1": "673 My Street",
+				"line2": "Apt 1",
+				"city": "Austin",
+				"stateProvince": "TX",
+				"postalCode": "78610",
+				"country": "USA"
+			}
+		}, // "profile" closure		
+
+		"attributes": {
+			// extensibility to the transaction object. custom needs...
+		}
+	} // "transaction" closure
+	
+</CODE></PRE>
+
+
+</body>
+</html>
