@@ -41,6 +41,8 @@
 			}
 		}, // "page" closure,
 
+
+		// IF and ONLY IF user is logged-in
 		"user": {
 
 			"profile": {
@@ -83,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<a href="./index.html"> Back to Universal datalayer specs</a>
 	<br>
-	<h1>Welcome to GTM-P5MB4MW!</h1>
+	<h1>Each page load!</h1>
 type <I>dataLayer</I> in browser console
 
 <p>1. actual pageload :: each time a new page loads (excl. new page renders in SPA context)</p>
@@ -91,22 +93,32 @@ type <I>dataLayer</I> in browser console
 <PRE><CODE>
 	dataLayer = window.dataLayer || [];
 	dataLayer.push({
+
 		"pageInstanceID": "dev", // "dev", "staging", "prod"
-		"page": <a href="obj/pageObj.html">pageObj</a>,
-		"user": <a href="obj/userObj">userObj</a>
+
+		"page": <a href="./obj/pageObj.html">pageObj</a>,
+
+		"user": <a href="./obj/userObj.html">userObj</a> // IF and ONLY IF user is logged-in
 	});
+<br>
 </CODE></PRE>
+In the special case, a page is a Product details page, or Cart page, or Transaction conformation page: include: <a href="./obj/pageObj.html"><em>productObj</em></a> OR <a href="./obj/cartObj.html"><em>cartObj</em></a> OR <a href="./obj/transactionObj.html"><em>transactionObj</em></a> objects as well. For ex:
+	<ul>
+	<li> <a href="./product-details-page.html"> Product details page </a> </li>
+
+	<li> <a href="./cart-page.html"> Cart page </a> </li>
+
+	<li> <a href="./transaction-confirm-page.html"> Transaction Confirmation page </a> </li>
+</ul>
 <hr>
-<p>2. virtual page :: new page renders in SPA context ---> just update the new page object with new context, together with additional key <CODE>_clear: true</CODE>
+<p>2. virtual page :: new page renders in SPA context ---> just update the new page object with new context, together with additional key <CODE>_clear: true</CODE>, this will clear outdated information in the when context switching between pages (as usual, also include the productObj OR cartObj OR transactionObj depending what the new page context is)
 
 
 <PRE><CODE>
 	dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		"_clear": true,
-		"page.pageInfo": <a href="obj/pageObj.html">pageObj.pageInfo</a> coresponding top new context
-		"page.category": <a href="obj/pageObj.html">pageObj.category</a> coresponding top new context
-		"page.attributes": <a href="obj/pageObj.html">pageObj.attributes</a> coresponding top new context
+		"page": <a href="obj/pageObj.html">pageObj</a> coresponding to new context
 	});
 </CODE></PRE>
 
@@ -115,20 +127,22 @@ type <I>dataLayer</I> in browser console
 		window.dataLayer.push({
 			_clear: true,
 			
-			"page.pageInfo": {
-					// category corresponding to new context
+			"page": {
+				
+				"pageInfo": {
+					// corresponding to new context
+				},
+				
+				"category": {
+					// corresponding to new context
+				},
+				
+				"attributes": {
+					// corresponding to new context
+				}
 					
-				},
+			},
 
-			"page.category": {
-					// category corresponding to new context
-				},
-
-
-			"page.attributes": {
-					// attributes corresponding to new context
-					
-				},
 		});
 	} 
 </script>
